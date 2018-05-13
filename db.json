@@ -1,16 +1,16 @@
 {
   "users": [
     {
-      "name": "asd",
-      "username": "asd",
-      "email": "asd@d",
-      "id": 2
+      "username": "CristianoRonaldo7",
+      "name": "Cristiano",
+      "email": "ronaldo7@gmail.com",
+      "id": 1
     },
     {
-      "username": "qwe",
-      "name": "dd",
-      "email": "asd@d",
-      "id": 3
+      "username": "pashabiceps",
+      "name": "Jarosław",
+      "email": "pashabiceps20@gmail.com",
+      "id": 2
     }
   ]
 }

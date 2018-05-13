@@ -1,25 +1,19 @@
-# ReduxSimpleStarter
+<!--
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+HELLO
 
-### Getting Started
+INSTRUCTIONS
 
-There are two methods for getting started with this repo.
+git clone https://github.com/sponsorx14/Job-Appllication.git
 
-#### Familiar with Git?
-Checkout this repo, install dependencies, then start the gulp process with the following:
+cd Job-application
 
-```
-> git clone https://github.com/StephenGrider/ReduxSimpleStarter.git
-> cd ReduxSimpleStarter
-> npm install
-> npm start
-```
+npm install
 
-#### Not Familiar with Git?
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+json-server --watch db.json
 
-```
-> npm install
-> npm start
-```
+npm start
+
+THANKS
+
+ -->
