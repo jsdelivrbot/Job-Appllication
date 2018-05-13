@@ -1,0 +1,16 @@
+.container {
+  padding: 20px;
+}
+
+.container .btn {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.container .user-details {
+  padding: 20px 0;
+}
+
+.container .text-help {
+  color: red;
+}
