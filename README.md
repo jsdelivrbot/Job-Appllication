@@ -1,4 +1,3 @@
-<!--
 
 HELLO
 
@@ -15,5 +14,3 @@ json-server --watch db.json
 npm start
 
 THANKS
-
- -->
