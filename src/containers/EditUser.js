@@ -37,11 +37,13 @@ class EditUser extends Component {
     e.preventDefault();
     const values = this.state;
     const errors = this.validateForm(this.state);
-    const { id } = this.props.user
-    this.validateForm(values);
+    const { id } = this.props.user;
 
+    this.validateForm(values);
     if(_.isEmpty(errors)){
-      this.props.editUser(id, values);
+      this.props.editUser(id, values, () => {
+        this.props.data.history.push('/')
+      });
     }
   }
   render(){

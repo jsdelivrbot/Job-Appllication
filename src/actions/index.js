@@ -42,9 +42,9 @@ export function showUser(id){
 
 //ACTION RESPONSIBLE FOR EDITING USER's DETAILS
 
-export function editUser(id, values){
+export function editUser(id, values, callback){
   const request = axios.put(`${ROOT_URL}/users/${id}`, values)
-    .then(window.location.href = '/');
+    .then(() => callback())
 
   return {
     type: EDIT_USER,

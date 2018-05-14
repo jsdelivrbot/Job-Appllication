@@ -23,6 +23,7 @@ class ShowUser extends Component {
   // FUNCTION RESPONSIBLE FOR DELETING USER
   onDelete(){
     const { id } = this.props.match.params;
+    console.log(this.props)
     this.props.deleteUser(id, () => {
       this.props.history.push('/')
     });
@@ -62,7 +63,7 @@ class ShowUser extends Component {
     const { user } = this.props;
 
     return (
-      <EditUser user={user}/>
+      <EditUser data={this.props} user={user}/>
     )
   }
   render() {
