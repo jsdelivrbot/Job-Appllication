@@ -2,13 +2,41 @@
   padding: 20px;
 }
 
+.container .list-users-text {
+  margin-bottom: 20px;
+}
+
+.container .list-group li {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container .list-group li:hover {
+  background-color: #e2e2e2;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
 .container .btn {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-right: 10px;
 }
 
 .container .user-details {
   padding: 20px 0;
+}
+
+.container .user-details p {
+  font-size: 20px;
+  padding: 10px 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.container .user-details p:hover {
+  background-color: #e2e2e2;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .container .text-help {

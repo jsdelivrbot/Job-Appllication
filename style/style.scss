@@ -1,11 +1,36 @@
 .container {
   padding: 20px;
+  .list-users-text {
+    margin-bottom: 20px;
+  }
+  .list-group {
+    li {
+      -webkit-transition: .3s;
+      transition: .3s;
+      &:hover {
+        background-color: #e2e2e2;
+        -webkit-transition: .3s;
+        transition: .3s;
+      }
+    }
+  }
   .btn {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-right: 10px;
   }
   .user-details {
     padding: 20px 0;
+    p {
+      font-size: 20px;
+      padding: 10px 0;
+      -webkit-transition: .3s;
+      transition: .3s;
+      &:hover {
+        background-color: #e2e2e2;
+        -webkit-transition: .3s;
+        transition: .3s;
+      }
+    }
   }
   .text-help {
     color: red;

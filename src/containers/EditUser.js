@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { editUser } from '../actions';
 
-
+// COMPONENT RESPONSIBLE FOR EDITING USER's DETAILS
 class EditUser extends Component {
   constructor(props){
     super(props);
@@ -15,11 +15,12 @@ class EditUser extends Component {
       email: this.props.user.email
     }
   }
+  // FUNCITON RESPONSIBLE FOR VALIDATING FORM
   validateForm(values){
     const errors = {};
 
     if(!values.username) {
-      errors.username = 'Enter a username that contains at least 3 characters!';
+      errors.username = 'Enter your username!';
     }
     if(!values.name) {
       errors.name = 'Enter your name!';
@@ -30,21 +31,26 @@ class EditUser extends Component {
 
     return errors;
   }
+  // FUNCTION RESPONSIBLE FOR SUMBITING FORM
   submitForm(e){
     e.preventDefault();
     const values = this.state;
+    const errors = this.validateForm(this.state);
+    const { id } = this.props.user
     this.validateForm(values);
 
-    const errors = this.validateForm(this.state);
     if(_.isEmpty(errors)){
-      this.props.editUser(this.props.user.id, values);
+      this.props.editUser(id, values);
     }
   }
   render(){
     const errors = this.validateForm(this.state);
+    const errorUsername = errors.username;
+    const errorName = errors.name;
+    const errorEmail = errors.email;
     return (
         <form onSubmit={this.submitForm.bind(this)}>
-          <div className='form-group'>
+          <div className={`form-group ${errorUsername ? 'has-danger' : ''}`}>
             <label>
               Username:
             </label>
@@ -58,7 +64,7 @@ class EditUser extends Component {
               {errors.username}
             </div>
           </div>
-          <div className='form-group'>
+          <div className={`form-group ${errorName ? 'has-danger' : ''}`}>
             <label>
               Name:
             </label>
@@ -73,7 +79,7 @@ class EditUser extends Component {
             </div>
             </div>
 
-            <div className='form-group'>
+            <div className={`form-group ${errorEmail ? 'has-danger' : ''}`}>
               <label>
                 Email:
               </label>

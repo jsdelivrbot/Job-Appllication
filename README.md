@@ -11,6 +11,8 @@ npm install
 
 json-server --watch db.json
 
+OPEN NEW TERMINAL
+
 npm start
 
 THANKS

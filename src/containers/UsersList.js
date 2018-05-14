@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { getUsers } from '../actions';
 
+// MAIN COMPONENT RESPONSIBLE FOR DISPLAYING USER's LIST
 class UsersList extends Component {
   constructor(props){
     super(props);
@@ -10,6 +11,7 @@ class UsersList extends Component {
   componentDidMount(){
     this.props.getUsers();
   }
+  // FUNCTION RESPONSIBLE FOR RENDERNG USERS
   renderUsers(){
     return _.map(this.props.usersList, user => {
       return (
@@ -24,7 +26,7 @@ class UsersList extends Component {
   render(){
     return (
       <div>
-        <h3>List of users:</h3>
+        <h3 className='list-users-text'>List of users:</h3>
         <ul className='list-group'>
           {this.renderUsers()}
         </ul>
@@ -39,6 +41,5 @@ class UsersList extends Component {
 function mapStateToProps({ usersList }){
   return { usersList }
 }
-
 
 export default connect(mapStateToProps, { getUsers })(UsersList);

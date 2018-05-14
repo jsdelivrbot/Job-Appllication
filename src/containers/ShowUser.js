@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { showUser, deleteUser } from '../actions';
 import EditUser from './EditUser';
 
-
+// COMPONENT RESPONSIBLE FOR SHOWING USER's DETAILS
 class ShowUser extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,6 @@ class ShowUser extends Component {
     this.state = {
       editing: false
     }
-
   }
   componentDidMount(){
     // PREVENTS UNNECESSARY FETCHING DATA
@@ -21,21 +20,23 @@ class ShowUser extends Component {
       this.props.showUser(id);
     }
   }
+  // FUNCTION RESPONSIBLE FOR DELETING USER
   onDelete(){
     const { id } = this.props.match.params;
     this.props.deleteUser(id, () => {
       this.props.history.push('/')
-    })
+    });
   }
+  // FUNCTION RESPONSIBLE FOR RENDERING USER's DETAILS
   renderUser(){
     const { user } = this.props;
     return (
       <div>
         <Link to='/' className='btn btn-primary' >Back</Link>
         <div className='user-details'>
-          <h2><u>Username:</u> <strong>{user.username}</strong></h2>
-          <h3><u>Name:</u> <strong>{user.name}</strong></h3>
-          <p><u>Email:</u> <a href={`mailto:${user.email}`}>{user.email}</a></p>
+          <p>Username: <strong>{user.username}</strong></p>
+          <p>Name: <strong>{user.name}</strong></p>
+          <p>Email: <a href={`mailto:${user.email}`}>{user.email}</a></p>
         </div>
         <button
           className='btn btn-warning'
@@ -52,9 +53,11 @@ class ShowUser extends Component {
       </div>
     );
   }
+  // FUNCTION RESPONSIBLE FOR MANIPULATING {editing} STATE INSDE COMPONENT
   changeState(){
     this.setState({ editing: true})
   }
+  // FUNCTION RESPONSIBLE FOR RENDERING EDITUSER COMPONENT
   renderEdit(){
     const { user } = this.props;
 

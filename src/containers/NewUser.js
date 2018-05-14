@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { newUser } from '../actions';
 
-
+// COMPONENT RESPONSIBLE FOR CREATING NEW USER
 class NewUser extends Component {
+  // FUNCTION RESPONSIBLE FOR RENDERING FORM USING REDUX_FORM library
   renderField(field){
     const className = `form-group ${field.meta.touched && field.meta.error ? 'has-danger' : ''}`
     return (
@@ -22,6 +23,7 @@ class NewUser extends Component {
       </div>
     )
   }
+  // FUNCTION RESPONSIBLE FOR SUBMITING FORM
   onSubmit(values){
     this.props.newUser(values, () => {
       this.props.history.push('/');
@@ -58,11 +60,12 @@ class NewUser extends Component {
   }
 }
 
+// HELPER FUNCTION RESPONSIBLE FOR VALIDATING FORM
 function validate(values){
   const errors = {};
 
   if(!values.username) {
-    errors.username = 'Enter a username that contains at least 3 characters!';
+    errors.username = 'Enter your username!';
   }
   if(!values.name) {
     errors.name = 'Enter your name!';
@@ -72,6 +75,7 @@ function validate(values){
   }
   return errors;
 }
+
 
 export default reduxForm({
   validate,
