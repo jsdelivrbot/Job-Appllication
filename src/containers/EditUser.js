@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
 import { editUser } from '../actions';
 
 // COMPONENT RESPONSIBLE FOR EDITING USER's DETAILS
@@ -48,6 +49,7 @@ class EditUser extends Component {
     const errorUsername = errors.username;
     const errorName = errors.name;
     const errorEmail = errors.email;
+
     return (
         <form onSubmit={this.submitForm.bind(this)}>
           <div className={`form-group ${errorUsername ? 'has-danger' : ''}`}>
@@ -100,5 +102,4 @@ class EditUser extends Component {
   }
 }
 
-
-export default connect(null, { editUser })(EditUser);
+export default connect(null, { editUser })(EditUser)

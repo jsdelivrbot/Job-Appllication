@@ -42,7 +42,7 @@ export function showUser(id){
 
 //ACTION RESPONSIBLE FOR EDITING USER's DETAILS
 
-export function editUser(id, values, callback){
+export function editUser(id, values){
   const request = axios.put(`${ROOT_URL}/users/${id}`, values)
     .then(window.location.href = '/');
 
